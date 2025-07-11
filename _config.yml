@@ -122,12 +122,12 @@ disqus_shortname: al-folio # put your disqus shortname
 # If you have blog posts published on medium.com or other external sources,
 # you can display them in your blog by adding a link to the RSS feed.
 external_sources:
-  - name: medium.com
-    rss_url: https://medium.com/@al-folio/feed
-  - name: Google Blog
-    posts:
-      - url: https://blog.google/technology/ai/google-gemini-update-flash-ai-assistant-io-2024/
-        published_date: 2024-05-14
+  # - name: medium.com
+  #   rss_url: https://medium.com/@al-folio/feed
+  # - name: Google Blog
+  #   posts:
+  #     - url: https://blog.google/technology/ai/google-gemini-update-flash-ai-assistant-io-2024/
+  #       published_date: 2024-05-14
 
 # -----------------------------------------------------------------------------
 # Newsletter
@@ -143,14 +143,14 @@ newsletter:
 # -----------------------------------------------------------------------------
 
 collections:
-  books:
-    output: true
+  # books:
+  #   output: true
   news:
     defaults:
       layout: post
     output: true
-  projects:
-    output: true
+  # projects:
+  #   output: true
 
 # -----------------------------------------------------------------------------
 # Jekyll settings
@@ -191,13 +191,39 @@ exclude:
   - README.md
   - readme_preview/
   - vendor
+  # Remove blogs
+  - _posts
+  - _pages/blog.md
+  - _includes/latest_posts.liquid
+  - _includes/related_posts.liquid
+  - _layouts/archive.liquid
+  - _plugins/external-posts.rb
+  # Remove books
+  - _books
+  - _pages/books.md
+  - _includes/book-shelf.liquid
+  - _includes/book-review.liquid
+  # Remove projects
+  - _projects
+  - _pages/projects.md
+  - _includes/projects_horizontal.liquid
+  - _includes/projects.liquid
+  # Remove repositories
+  - _pages/repositories.md
+  - _includes/repository
+  # Remove profiles
+  - _pages/profiles.md
+  # Remove teaching
+  - _pages/teaching.md
+  # Remove dropdown
+  - _pages/dropdown.md
 keep_files:
   - CNAME
   - .nojekyll
 
 # Plug-ins
 plugins:
-  - jekyll-archives-v2
+  # - jekyll-archives-v2
   - jekyll-email-protect
   - jekyll-feed
   - jekyll-get-json
