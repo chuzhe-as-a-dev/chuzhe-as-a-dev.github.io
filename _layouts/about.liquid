@@ -41,7 +41,7 @@ layout: default
 
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}
-      <h2>
+      <h2 style="font-weight: 400">
         <a href="{{ '/news/' | relative_url }}" style="color: inherit">News</a>
       </h2>
       {% include news.liquid limit=true %}
@@ -49,7 +49,7 @@ layout: default
 
     <!-- Latest posts -->
     {% if page.latest_posts and page.latest_posts.enabled %}
-      <h2>
+      <h2 style="font-weight: 400">
         <a href="{{ '/blog/' | relative_url }}" style="color: inherit">Latest Posts</a>
       </h2>
       {% include latest_posts.liquid %}
@@ -57,13 +57,13 @@ layout: default
 
     <!-- Selected papers -->
     {% if page.selected_papers %}
-      <h2>
+      <h2 style="font-weight: 400">
         <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Selected Publications</a>
       </h2>
       {% include selected_papers.liquid %}
     {% endif %}
 
-    <h2>Honors and Awards</h2>
+    <h2 style="font-weight: 400">Honors and Awards</h2>
     <ul>
       <li>SJTU Zhiyuan Honors Doctorate Distinction, 2025</li>
       <li>CACM Research Highlight, 2025</li>
@@ -76,7 +76,7 @@ layout: default
       <li>SJTU Lvyun Scholarship (top 2%), 2017</li>
     </ul>
 
-    <h2>Service and Teaching</h2>
+    <h2 style="font-weight: 400">Service and Teaching</h2>
     <ul>
       <li>Shadow PC, EuroSys 2022</li>
       <li>Head TA and guest lecturer, Computer System Design and Implementation (SJTU X037514), 2021 Spring</li>
