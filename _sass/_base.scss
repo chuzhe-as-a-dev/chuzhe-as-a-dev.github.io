@@ -787,6 +787,11 @@ footer.sticky-bottom {
         }
       }
 
+      .honors {
+        color: var(--global-highlight-color);
+        font-weight: 500;
+      }
+
       .links {
         a.btn {
           color: var(--global-text-color);

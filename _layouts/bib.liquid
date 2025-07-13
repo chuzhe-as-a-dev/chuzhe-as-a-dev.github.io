@@ -152,11 +152,39 @@
     {% assign proceedings = 'inproceedings,incollection' | split: ',' %}
     {% assign thesis = 'thesis,mastersthesis,phdthesis' | split: ',' %}
     {% if entry.type == 'article' %}
-      {% capture entrytype %}<em>{{ entry.journal }}</em>{% endcapture %}
+      {% if entry.abbr %}
+        {% assign venue_name = entry.abbr %}
+      {% else %}
+        {% assign venue_name = entry.journal %}
+      {% endif %}
+      {% if entry.venue_link %}
+        {% capture entrytype %}<a href="{{ entry.venue_link }}">{{ venue_name }}</a>{% endcapture %}
+      {% else %}
+        {% capture entrytype %}{{ venue_name }}{% endcapture %}
+      {% endif %}
+      {% if entry.volume %}
+        {% capture entrytype %}{{ entrytype }}, Volume {{ entry.volume }}{% endcapture %}
+      {% endif %}
+      {% if entry.number %}
+        {% capture entrytype %}{{ entrytype }}, Issue {{ entry.number }}{% endcapture %}
+      {% endif %}
     {% elsif proceedings contains entry.type %}
-      {% capture entrytype %}<em>In {{ entry.booktitle }}</em>{% endcapture %}
+      {% if entry.abbr %}
+        {% assign venue_name = entry.abbr %}
+        {% if entry.venue_link %}
+          {% capture entrytype %}<a href="{{ entry.venue_link }}">{{ venue_name }}</a>{% endcapture %}
+        {% else %}
+          {% capture entrytype %}{{ venue_name }}{% endcapture %}
+        {% endif %}
+      {% else %}
+        {% if entry.venue_link %}
+          {% capture entrytype %}In <a href="{{ entry.venue_link }}">{{ entry.booktitle }}</a>{% endcapture %}
+        {% else %}
+          {% capture entrytype %}In {{ entry.booktitle }}{% endcapture %}
+        {% endif %}
+      {% endif %}
     {% elsif thesis contains entry.type %}
-      {% capture entrytype %}<em>{{ entry.school }}</em>{% endcapture %}
+      {% capture entrytype %}{{ entry.school }}{% endcapture %}
     {% else %}
       {% capture entrytype %}{% endcapture %}
     {% endif %}
@@ -177,13 +205,25 @@
       {% include hook/bib.liquid %}
     {% endif %}
     {% assign entrytype_text = entrytype | strip_html | strip %}
-    {% capture periodical %}{{ entrytype }}{% if entrytype_text != "" and entryyear != "" %}, {% endif %}{{ entrymonth }}{{ entryyear }}{% endcapture %}
+    {% capture periodical %}
+      {{ entrytype }}
+      {% if entrytype_text != "" and entryyear != "" %}, {% endif %}
+      {% if entry.month %}{{ entrymonth }}{% endif %}
+      {{ entryyear }}
+    {% endcapture %}
     <div class="periodical">
       {{ periodical | strip }}
     </div>
     <div class="periodical">
       {{ entry.note | strip }}
     </div>
+
+    <!-- Honors and recognitions -->
+    {% if entry.userd %}
+      <div class="honors">
+        {{ entry.userd }}
+      </div>
+    {% endif %}
 
     <!-- Links/Buttons -->
     <div class="links">
@@ -236,6 +276,9 @@
       {% if entry.code %}
         <a href="{{ entry.code }}" class="btn btn-sm z-depth-0" role="button">Code</a>
       {% endif %}
+      {% if entry.talk %}
+        <a href="{{ entry.talk }}" class="btn btn-sm z-depth-0" role="button">Talk</a>
+      {% endif %}
       {% if entry.poster %}
         {% if entry.poster contains '://' %}
           <a href="{{ entry.poster }}" class="btn btn-sm z-depth-0" role="button">Poster</a>
@@ -248,6 +291,13 @@
           <a href="{{ entry.slides }}" class="btn btn-sm z-depth-0" role="button">Slides</a>
         {% else %}
           <a href="{{ entry.slides | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm z-depth-0" role="button">Slides</a>
+        {% endif %}
+      {% endif %}
+      {% if entry.extended %}
+        {% if entry.extended contains '://' %}
+          <a href="{{ entry.extended }}" class="btn btn-sm z-depth-0" role="button">Slides</a>
+        {% else %}
+          <a href="{{ entry.extended | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm z-depth-0" role="button">Extended</a>
         {% endif %}
       {% endif %}
       {% if entry.website %}
