@@ -216,6 +216,9 @@ exclude:
   - _pages/teaching.md
   # Remove dropdown
   - _pages/dropdown.md
+  # Remove cv
+  - _pages/cv.md
+  - _includes/cv
 keep_files:
   - CNAME
   - .nojekyll
