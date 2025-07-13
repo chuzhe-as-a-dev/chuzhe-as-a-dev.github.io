@@ -48,10 +48,14 @@ jobs:
           REPO_BRANCH: ${{ env.REPO_BRANCH }}
       - uses: actions/checkout@v4
         with:
+          submodules: true
+        with:
           repository: ${{ env.REPOSITORY }}
           token: ${{ secrets.LIGHTHOUSE_BADGER_TOKEN }}
           ref: ${{ env.BRANCH }}
       - uses: actions/checkout@v4
+        with:
+          submodules: true
         with:
           repository: "myactionway/lighthouse-badges"
           path: temp_lighthouse_badges_nested

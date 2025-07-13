@@ -11,6 +11,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: gh-pages
+          submodules: true
 
       - name: Find and Remove </source> Tags
         run: find . -type f -name "*.html" -exec sed -i 's/<\/source>//g' {} +
