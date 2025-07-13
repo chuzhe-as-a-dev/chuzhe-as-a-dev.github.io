@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://chuzhe-as-a-dev.github.io/sitemap.xml
+Sitemap: https://chuzhe.me/sitemap.xml
