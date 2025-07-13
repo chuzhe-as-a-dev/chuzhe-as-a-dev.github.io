@@ -27,12 +27,13 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Chuzhe Tang will join [DIAS](https://www.epfl.ch/labs/dias/) at EPFL as a postdoctoral researcher in Fall 2025, working with Prof. [Anastasia Ailamaki](https://people.epfl.ch/anastasia.ailamaki).
-His research focuses on parallel and distributed database systems.
+<!-- Chuzhe Tang will join [DIAS](https://www.epfl.ch/labs/dias/) at EPFL as a postdoctoral researcher in Fall 2025, working with Prof. [Anastasia Ailamaki](https://people.epfl.ch/anastasia.ailamaki). -->
 
-He received his Ph.D. in Computer Science and Technology from Shanghai Jiao Tong University in 2025, where he worked with Prof. [Zhaoguo Wang](https://ipads.se.sjtu.edu.cn/pub/members/zhaoguo_wang) and Prof. [Haibo Chen](https://ipads.se.sjtu.edu.cn/pub/members/haibo_chen) at [IPADS](https://ipads.se.sjtu.edu.cn/).
+Chuzhe Tang received his Ph.D. in Computer Science and Technology from Shanghai Jiao Tong University in 2025, where he worked with Prof. [Zhaoguo Wang](https://ipads.se.sjtu.edu.cn/pub/members/zhaoguo_wang) and Prof. [Haibo Chen](https://ipads.se.sjtu.edu.cn/pub/members/haibo_chen) at [IPADS](https://ipads.se.sjtu.edu.cn/).
 During his doctoral studies, he spent a year as a visiting student at New York University, working with Prof. [Jinyang Li](https://jinyangli.github.io/).
 He earned his B.Eng. in Software Engineering from Shanghai Jiao Tong University in 2019.
+
+His research focuses on parallel and distributed database systems.
 
 <!--
 Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
