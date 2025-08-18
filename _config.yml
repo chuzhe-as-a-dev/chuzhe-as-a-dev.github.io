@@ -311,7 +311,7 @@ scholar:
   details_dir: bibliography
   details_link: Details
 
-  query: "@*[keywords!=in-review && keywords!=zh-cv]"
+  query: "@*[keywords!=manuscript && keywords!=in-review && keywords!=zh-cv]"
   sort_by: year,month
   order: descending
   group_by: year
