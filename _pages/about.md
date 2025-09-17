@@ -3,9 +3,10 @@ layout: about
 title: Home
 permalink: /
 subtitle: >
-  <span style="color:var(--global-theme-color)" data-toggle="popover" data-placement="bottom" data-content="[last name initial] DOT [first name] AT qq DOT com">Email</span> | 
-  <a href="https://scholar.google.com/citations?user=ZjndVLMAAAAJ">Google Scholar</a> | 
-  <a href="https://dblp.org/pid/236/4348.html">DBLP</a>
+  <span style="color:var(--global-theme-color)" data-toggle="popover" data-placement="bottom" data-content="[last name initial] DOT [first name] AT qq DOT com">Email</span> |
+  <a href="https://scholar.google.com/citations?user=ZjndVLMAAAAJ">Google Scholar</a> |
+  <a href="https://dblp.org/pid/236/4348.html">DBLP</a> |
+  <a href="/assets/audio/pronunciation.mp3" target="_blank">Pronunciation 👀</a>
 
 profile:
   align: right
