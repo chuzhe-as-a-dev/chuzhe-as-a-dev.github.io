@@ -3,7 +3,9 @@ layout: about
 title: Home
 permalink: /
 subtitle: >
-  <a href="mailto:t.chuzhe@qq.com">Email</a> | <a href="https://scholar.google.com/citations?user=ZjndVLMAAAAJ">Google Scholar</a> | <a href="https://dblp.org/pid/236/4348.html">DBLP</a>
+  <span style="color:var(--global-theme-color)" data-toggle="popover" data-placement="bottom" data-content="[last name initial] DOT [first name] AT qq DOT com">Email</span> | 
+  <a href="https://scholar.google.com/citations?user=ZjndVLMAAAAJ">Google Scholar</a> | 
+  <a href="https://dblp.org/pid/236/4348.html">DBLP</a>
 
 profile:
   align: right
