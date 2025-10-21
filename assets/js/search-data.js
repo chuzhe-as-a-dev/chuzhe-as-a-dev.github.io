@@ -28,6 +28,9 @@ ninja.data = [{
           section: "News",},{id: "news-graduated-with-sjtu-zhiyuan-honors-doctorate-distinction",
           title: 'Graduated with SJTU Zhiyuan Honors Doctorate Distinction.',
           description: "",
+          section: "News",},{id: "news-dindex-accepted-to-icde-2026",
+          title: 'DIndex accepted to ICDE 2026.',
+          description: "",
           section: "News",},{
       id: 'light-theme',
       title: 'Change theme to light',
