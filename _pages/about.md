@@ -3,14 +3,16 @@ layout: about
 title: Home
 permalink: /
 subtitle: >
-  <span style="color:var(--global-theme-color)" data-toggle="popover" data-placement="bottom" data-content="[last name initial] DOT [first name] AT qq DOT com">Email</span> |
+  <span style="color:var(--global-theme-color)" data-toggle="popover" data-placement="bottom" data-content="t DOT chuzhe AT gmail DOT com">Email</span> |
   <a href="https://scholar.google.com/citations?user=ZjndVLMAAAAJ">Google Scholar</a> |
   <a href="https://dblp.org/pid/236/4348.html">DBLP</a> |
   <a href="/assets/audio/pronunciation.mp3" target="_blank">Pronunciation 👀</a>
 
+# Pronunciation from https://ttsfree.com/text-to-speech/chinese-mandarin-simplified
+
 profile:
   align: right
-  image: prof_pic.jpg
+  image: headshot.jpg
   image_circular: false # crops the image to make it circular
   # more_info: >
   #   <p>555 your office number</p>
