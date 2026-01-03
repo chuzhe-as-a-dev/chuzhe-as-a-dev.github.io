@@ -32,7 +32,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Chuzhe Tang is a postdoctoral researcher at the [DIAS](https://www.epfl.ch/labs/dias/) lab at EPFL, working with Prof. [Anastasia Ailamaki](https://people.epfl.ch/anastasia.ailamaki).
+Chuzhe is a postdoctoral researcher at the [DIAS](https://www.epfl.ch/labs/dias/) lab at EPFL, working with Prof. [Anastasia Ailamaki](https://people.epfl.ch/anastasia.ailamaki).
 His research focuses on parallel and distributed database systems.
 
 He received his Ph.D. in Computer Science and Technology from Shanghai Jiao Tong University in 2025, where he worked with Prof. [Zhaoguo Wang](https://ipads.se.sjtu.edu.cn/pub/members/zhaoguo_wang) and Prof. [Haibo Chen](https://ipads.se.sjtu.edu.cn/pub/members/haibo_chen) at [IPADS](https://ipads.se.sjtu.edu.cn/).
