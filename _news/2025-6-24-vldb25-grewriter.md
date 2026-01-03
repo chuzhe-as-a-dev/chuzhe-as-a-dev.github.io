@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-GRewriter accepted to VLDB 2025.
+[GRewriter](/publications) accepted to VLDB 2025.

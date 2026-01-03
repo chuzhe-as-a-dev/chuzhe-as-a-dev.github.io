@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Sonata accepted to VLDB 2025.
+[Sonata](/publications) accepted to VLDB 2025.
