@@ -3,7 +3,7 @@ layout: about
 title: Home
 permalink: /
 subtitle: >
-  <span style="color:var(--global-theme-color)" data-toggle="popover" data-placement="bottom" data-content="t DOT chuzhe AT gmail DOT com">Email</span> |
+  <span style="color:var(--global-theme-color)" data-toggle="popover" data-placement="bottom" data-content="chuzhe DOT tang AT epfl DOT ch">Email</span> |
   <a href="https://scholar.google.com/citations?user=ZjndVLMAAAAJ">Google Scholar</a> |
   <a href="https://dblp.org/pid/236/4348.html">DBLP</a> |
   <a href="/assets/audio/pronunciation.mp3" target="_blank">Pronunciation 👀</a>
@@ -32,7 +32,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Chuzhe Tang will be joining [DIAS](https://www.epfl.ch/labs/dias/) at EPFL as a postdoctoral researcher, working with Prof. [Anastasia Ailamaki](https://people.epfl.ch/anastasia.ailamaki).
+Chuzhe Tang is a postdoctoral researcher at the [DIAS](https://www.epfl.ch/labs/dias/) lab at EPFL, working with Prof. [Anastasia Ailamaki](https://people.epfl.ch/anastasia.ailamaki).
 His research focuses on parallel and distributed database systems.
 
 He received his Ph.D. in Computer Science and Technology from Shanghai Jiao Tong University in 2025, where he worked with Prof. [Zhaoguo Wang](https://ipads.se.sjtu.edu.cn/pub/members/zhaoguo_wang) and Prof. [Haibo Chen](https://ipads.se.sjtu.edu.cn/pub/members/haibo_chen) at [IPADS](https://ipads.se.sjtu.edu.cn/).
