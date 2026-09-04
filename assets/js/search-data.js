@@ -34,6 +34,9 @@ ninja.data = [{
           section: "News",},{id: "news-nominated-for-ccf-doctoral-dissertation-award",
           title: 'Nominated for CCF Doctoral Dissertation Award.',
           description: "",
+          section: "News",},{id: "news-dataset-hardness-study-accepted-to-aidb-2026",
+          title: 'Dataset hardness study accepted to AIDB 2026.',
+          description: "",
           section: "News",},{
       id: 'light-theme',
       title: 'Change theme to light',
