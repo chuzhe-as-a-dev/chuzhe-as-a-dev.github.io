@@ -21,6 +21,8 @@ Make narrow changes and preserve Liquid tags, YAML front matter, and the existin
 
 When changing publications, initialize the submodule if needed with `git submodule update --init --recursive`. A bibliography update normally requires a commit in `_my_bib` followed by an update of the submodule pointer in this repository. Do not replace the submodule with copied bibliography data. Inspect both repositories' status before reporting completion.
 
+For publication `location` fields, include standard two-letter state or province abbreviations for venues in the United States and Canada, as in `San Diego, CA, USA` and `Montreal, QC, Canada`. Keep venues in other countries in `City, Country` form.
+
 Do not edit generated or cached output in `_site/`, `.jekyll-cache/`, `.sass-cache/`, `assets/libs/`, `node_modules/`, or `vendor/`. Do not commit local `.DS_Store` files. Keep unrelated upstream theme examples and unrelated user changes intact.
 
 ## Validation
