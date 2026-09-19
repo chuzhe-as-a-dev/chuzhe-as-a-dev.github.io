@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",()=>{const e=document.querySelector(".contact-email"),t=document.getElementById("contact-email-popover");e&&t&&(e.addEventListener("click",()=>{t.hidden=!t.hidden,e.setAttribute("aria-expanded",String(!t.hidden))}),e.addEventListener("keydown",d=>{"Escape"===d.key&&(t.hidden=!0,e.setAttribute("aria-expanded","false"))}))});
