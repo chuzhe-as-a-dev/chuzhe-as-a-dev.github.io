@@ -13,9 +13,10 @@ description: >
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-# keywords: jekyll, jekyll-theme, academic-website, portfolio-website # add your own keywords or leave empty
+keywords:
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: 👨‍💻 # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+apple_touch_icon: # image name in /assets/img/ (or a rooted path / absolute URL) used for iOS home-screen bookmarks; needs a real 180x180 PNG, since Safari ignores the emoji favicon above. Left empty, iOS falls back to a screenshot of the page.
 
 url: https://chuzhe.me # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/. Leave blank for root
@@ -28,12 +29,60 @@ back_to_top: false # set to false to disable the back to top button
 # -----------------------------------------------------------------------------
 
 # repo color theme
-repo_theme_light: default # https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
-repo_theme_dark: dark # https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
+repo_theme_light: default # https://github.com/stats-organization/github-stats-extended/blob/master/packages/core/src/themes/README.md
+repo_theme_dark: dark # https://github.com/stats-organization/github-stats-extended/blob/master/packages/core/src/themes/README.md
+# Off by default: addresses are then split at build time so the HTML contains no
+# `user@host` and no `mailto:` for harvesters to scrape, and clicking one copies
+# it to the clipboard instead of opening a mail client.
+# See "Protecting email addresses from scrapers" in docs/CUSTOMIZE.md.
+protect_email: false
+
+# Off by default: the free public github-profile-trophy instance is disabled
+# (its Vercel deployment answers HTTP 402 / DEPLOYMENT_DISABLED), so every trophy
+# image 404s. The project itself is still open source and free — self-host it and
+# point external_services.github_profile_trophy_url at your instance, then set
+# enabled: true. See docs/CUSTOMIZE.md.
 repo_trophies:
-  enabled: true
+  enabled: false
   theme_light: flat # https://github.com/ryo-ma/github-profile-trophy
   theme_dark: gitdimmed # https://github.com/ryo-ma/github-profile-trophy
+
+# External service URLs for repository page
+# To use a different instance or service for displaying GitHub stats and trophies,
+# update these URLs. These are used in the repository templates.
+external_services:
+  github_readme_stats_url: https://github-stats-extended.vercel.app
+  github_profile_trophy_url: https://github-profile-trophy.vercel.app
+
+# -----------------------------------------------------------------------------
+# al-folio API (v1.x)
+# -----------------------------------------------------------------------------
+
+al_folio:
+  api_version: 1
+  style_engine: tailwind
+  tailwind:
+    version: 4.1.18
+    preflight: false
+    css_entry: assets/tailwind/app.css
+  distill:
+    engine: distillpub-template
+    source: al-org-dev/distill-template#al-folio
+    allow_remote_loader: false
+  features:
+    cv:
+      enabled: false
+    distill:
+      enabled: false
+  compat:
+    bootstrap:
+      enabled: false
+      support_window: v1.0-v1.2
+      deprecates_in: v1.3
+      removed_in: v2.0
+  upgrade:
+    channel: stable
+    auto_apply_safe_fixes: false
 
 # -----------------------------------------------------------------------------
 # RSS Feed
@@ -55,8 +104,6 @@ bib_search: true
 # Dimensions
 max_width: 930px
 
-# TODO: add layout settings (single page vs. multi-page)
-
 # -----------------------------------------------------------------------------
 # Open Graph & Schema.org
 # -----------------------------------------------------------------------------
@@ -70,12 +117,15 @@ og_image: https://chuzhe.me/assets/img/headshot-share.jpg # The site-wide (defau
 # Analytics and search engine verification
 # -----------------------------------------------------------------------------
 
-# For Google Analytics, see https://support.google.com/analytics/answer/10447272?hl=en&ref_topic=14088998&sjid=5129943941510317771-SA#zippy=%2Cgoogle-sites
-# and follow the instructions for Google Sites. You will need to create a Google Analytics property and copy the Google tag ID.
-google_analytics: G-8DPHSL7GDB # your Google Analytics measurement ID (format: G-XXXXXXXXXX)
-cronitor_analytics: # cronitor RUM analytics site ID (format: XXXXXXXXX)
-pirsch_analytics: # your Pirsch analytics site ID (length 32 characters)
-openpanel_analytics: # your Openpanel analytics client ID (format: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
+analytics:
+  # For Google Analytics, see https://support.google.com/analytics/answer/10447272?hl=en&ref_topic=14088998&sjid=5129943941510317771-SA#zippy=%2Cgoogle-sites
+  # and follow the instructions for Google Sites. You will need to create a Google Analytics property and copy the Google tag ID.
+  google: G-8DPHSL7GDB # your Google Analytics measurement ID (format: G-XXXXXXXXXX)
+  cronitor: # cronitor RUM analytics site ID (format: XXXXXXXXX)
+  pirsch: # your Pirsch analytics site ID (length 32 characters)
+  openpanel: # your Openpanel analytics client ID (format: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
+  cloudflare: # your Cloudflare Web Analytics beacon token (32 hex characters)
+enable_simple_analytics: false # Simple Analytics identifies a site by its domain, so it has no ID to set above
 
 # For Google Search Console, see https://support.google.com/webmasters/answer/9008080?hl=en#meta_tag_verification&zippy=%2Chtml-tag
 google_site_verification: # your google-site-verification ID (Google Search Console)
@@ -109,7 +159,8 @@ giscus:
   strict: 1 # use strict identification mode
   reactions_enabled: 1 # enable (1) or disable (0) emoji reactions
   input_position: bottom # whether to display input form below (bottom) or above (top) the comments
-  theme: preferred_color_scheme # name of the color scheme (preferred works well with al-folio light/dark mode)
+  dark_theme: dark # name of the dark color scheme (preferred works well with al-folio dark mode)
+  light_theme: light # name of the light color scheme (preferred works well with al-folio light mode)
   emit_metadata: 0
   lang: en
 
@@ -120,13 +171,8 @@ disqus_shortname: al-folio # put your disqus shortname
 # External sources.
 # If you have blog posts published on medium.com or other external sources,
 # you can display them in your blog by adding a link to the RSS feed.
-external_sources:
-  # - name: medium.com
-  #   rss_url: https://medium.com/@al-folio/feed
-  # - name: Google Blog
-  #   posts:
-  #     - url: https://blog.google/technology/ai/google-gemini-update-flash-ai-assistant-io-2024/
-  #       published_date: 2024-05-14
+# Optional: Set default categories and tags for posts from each source.
+external_sources: []
 
 # -----------------------------------------------------------------------------
 # Newsletter
@@ -169,22 +215,18 @@ kramdown:
       start_line: 1
 
 # Includes & excludes
-include: ["_pages", "_scripts"]
+include: ["_pages"]
 exclude:
   - AGENTS.md
   - al-folio-upgrade-report.md
-  - assets/video/tutorial_al_folio.mp4
-  - assets/plotly/demo.html
   - bin/
-  - CONTRIBUTING.md
-  - CUSTOMIZE.md
+  - CLAUDE.md
   - Dockerfile
   - docker-compose.yml
   - docker-compose-slim.yml
-  - FAQ.md
+  - docs/
   - Gemfile
   - Gemfile.lock
-  - INSTALL.md
   - LICENSE
   - lighthouse_results/
   - package.json
@@ -193,39 +235,73 @@ exclude:
   - purgecss.config.js
   - README.md
   - readme_preview/
+  - gems/
+  - migrations/
   - vendor
-  # Remove blogs
+  - assets/video/tutorial_al_folio.mp4
+  - assets/plotly/demo.html
+  - CONTRIBUTING.md
+  - CUSTOMIZE.md
+  - FAQ.md
+  - INSTALL.md
   - _posts
   - _pages/blog.md
   - _includes/latest_posts.liquid
   - _includes/related_posts.liquid
   - _layouts/archive.liquid
   - _plugins/external-posts.rb
-  # Remove books
   - _books
   - _pages/books.md
   - _includes/book-shelf.liquid
   - _includes/book-review.liquid
-  # Remove projects
   - _projects
   - _pages/projects.md
   - _includes/projects_horizontal.liquid
   - _includes/projects.liquid
-  # Remove repositories
   - _pages/repositories.md
   - _includes/repository
-  # Remove profiles
   - _pages/profiles.md
-  # Remove teaching
   - _pages/teaching.md
-  # Remove dropdown
   - _pages/dropdown.md
-  # Remove cv
   - _pages/cv.md
   - _includes/cv
+  - _pages/plugins.md
+  - _teachings
+  - test/
+  - requirements.txt
+  - _bibliography
+  - assets/audio/epicaly-short-113909.mp3
+  - assets/bibliography
+  - assets/html
+  - assets/rendercv
+  - assets/pdf/example_pdf.pdf
+  - assets/img/rhino.png
+  - assets/img/8.jpg
+  - assets/img/prof_pic_color.png
+  - assets/img/9.jpg
+  - assets/img/star-history-light.svg
+  - assets/img/star-history-dark.svg
+  - assets/img/12.jpg
+  - assets/img/template_error.png
+  - assets/img/11.jpg
+  - assets/img/10.jpg
+  - assets/img/4.jpg
+  - assets/img/5.jpg
+  - assets/img/7.jpg
+  - assets/img/6.jpg
+  - assets/img/2.jpg
+  - assets/img/3.jpg
+  - assets/img/prof_pic.jpg
+  - assets/img/1.jpg
+  - assets/img/book_covers/the_godfather.jpg
+  - assets/img/publication_preview/brownian-motion.gif
+  - assets/img/publication_preview/wave-mechanics.gif
 keep_files:
   - CNAME
   - .nojekyll
+
+# Use al_folio_core as the theme runtime; local files can still override theme files.
+theme: al_folio_core
 
 # Plug-ins
 plugins:
@@ -286,9 +362,14 @@ sass:
 # -----------------------------------------------------------------------------
 
 jekyll-minifier:
-  compress_css: false # Sass and Tailwind already minify CSS; CSSminify2 corrupts var(--*) inside calc().
   compress_javascript: false # set to false since we are using terser as the js minifier
-  exclude: ["robots.txt", "assets/js/search/*.js"]
+  # CSS is already minified upstream (Tailwind build ships tailwind.css; main.scss is compiled
+  # with sass `style: compressed`). Re-minifying via cssminify2 mangles Tailwind v4 spacing
+  # tokens inside calc(), turning `var(--spacing)` into the invalid `var( -  - spacing)` and
+  # breaking every spacing/positioning utility (e.g. .fixed-top -> broken navbar). Disable it.
+  compress_css: false
+  # JS minification is delegated to jekyll-terser (compress_javascript above is false).
+  exclude: ["robots.txt"]
 
 # -----------------------------------------------------------------------------
 # Terser
@@ -360,10 +441,14 @@ filtered_bibtex_keywords:
     bibtex_show,
     blog,
     code,
+    dimensions,
+    eprint,
     google_scholar_id,
+    hal,
     html,
     inspirehep_id,
     pdf,
+    pmid,
     poster,
     preview,
     selected,
@@ -412,7 +497,7 @@ imagemagick:
     - ".tiff"
     - ".gif"
   output_formats:
-    webp: "-quality 85"
+    webp: "-auto-orient -quality 85"
 
 # Lazy loading images
 #   If you enable lazy loading, all images will add the loading="lazy" attribute.
@@ -426,12 +511,9 @@ lazy_loading_images: true # enables lazy loading of images (recommended)
 # Optional Features
 # -----------------------------------------------------------------------------
 
-enable_google_analytics: true # enables google analytics
-enable_cronitor_analytics: false # enables cronitor RUM analytics
-enable_pirsch_analytics: false # enables Pirsch analytics (https://pirsch.io/)
-enable_openpanel_analytics: false # enables Openpanel analytics (https://openpanel.dev/)
 enable_google_verification: false # enables google site verification
 enable_bing_verification: false # enables bing site verification
+enable_cookie_consent: false # enables GDPR-compliant cookie consent dialog (https://github.com/orestbida/cookieconsent)
 enable_masonry: false # enables automatic project cards arrangement
 enable_math: false # enables math typesetting (uses MathJax)
 enable_tooltips: false # enables automatic tooltip links generated for each section titles on pages and posts
@@ -668,31 +750,3 @@ jsonresume:
   - languages
   - interests
   - references
-
-theme: al_folio_core
-
-al_folio:
-  api_version: 1
-  style_engine: tailwind
-  tailwind:
-    version: 4.1.18
-    preflight: false
-    css_entry: assets/tailwind/app.css
-  distill:
-    engine: distillpub-template
-    source: al-org-dev/distill-template#al-folio
-    allow_remote_loader: false
-  features:
-    cv:
-      enabled: false
-    distill:
-      enabled: false
-  compat:
-    bootstrap:
-      enabled: false
-      support_window: v1.0-v1.2
-      deprecates_in: v1.3
-      removed_in: v2.0
-  upgrade:
-    channel: stable
-    auto_apply_safe_fixes: false

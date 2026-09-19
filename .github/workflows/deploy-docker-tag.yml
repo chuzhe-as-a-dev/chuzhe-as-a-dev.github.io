@@ -16,13 +16,12 @@ on:
 
 jobs:
   build:
+    if: github.repository == 'alshedivat/al-folio'
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          submodules: true
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3

@@ -11,11 +11,12 @@
 - 首页简介在 `_pages/about.md`；荣誉与奖励、学术服务、教学和指导经历直接写在 `_layouts/about.liquid` 中。
 - 新闻放在 `_news/`，front matter 使用 `layout: post`、`date: YYYY-MM-DD`、`inline: true` 和 `related_posts: false`。
 - 实际文献源为 Git 子模块中的 `_my_bib/all.bib`；`_bibliography/papers.bib` 是未使用的上游示例。
+- `_sass/_homepage.scss` 是本站自定义样式文件；后续本站样式定制也集中放在此文件中。
 
 ## 验证
 
 - 本地主题覆盖变更后运行 `bundle exec al-folio upgrade overrides audit`；确认与上游差异后，用 `bundle exec al-folio upgrade overrides accept <文件>` 更新 `.al-folio-overrides.yml`。
-
 - Markdown、YAML、Liquid、JavaScript 或样式修改：运行 `npx prettier . --check`；缺少依赖时先运行 `npm ci`。
 - 影响站点的修改：运行 `JEKYLL_ENV=production bundle exec jekyll build`，并按部署工作流执行 PurgeCSS 后检查页面。
 - 仅在提交前运行 `git diff --check`。
+- 推送后，部署效果默认由用户自行确认，不主动打开网站查看。
