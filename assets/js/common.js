@@ -53,7 +53,9 @@ $(document).ready(function () {
   });
 
   // trigger popovers
-  $('[data-toggle="popover"]').popover({
-    trigger: "hover",
+  $('[data-toggle="popover"]').each(function () {
+    $(this).popover({
+      trigger: $(this).data("trigger") || "hover",
+    });
   });
 });

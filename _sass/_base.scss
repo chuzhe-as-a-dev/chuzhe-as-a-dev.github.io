@@ -190,6 +190,26 @@ ul.task-list input[type="checkbox"] {
   color: var(--global-theme-color);
 }
 
+// Email control styled like the adjacent links.
+.contact-email {
+  appearance: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: var(--global-theme-color);
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+}
+
 // Profile
 
 .profile {
