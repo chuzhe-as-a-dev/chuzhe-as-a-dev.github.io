@@ -3,7 +3,7 @@ layout: about
 title: Home
 permalink: /
 subtitle: >
-  <button type="button" class="contact-email" data-toggle="popover" data-trigger="click" data-placement="bottom" data-content="chuzhe DOT tang AT epfl DOT ch">Email</button> |
+  <span class="contact-email-wrap"><button type="button" class="contact-email" aria-expanded="false" aria-controls="contact-email-popover">Email</button><span id="contact-email-popover" class="contact-email-popover" hidden>chuzhe DOT tang AT epfl DOT ch</span></span> |
   <a href="https://scholar.google.com/citations?user=ZjndVLMAAAAJ">Google Scholar</a> |
   <a href="https://dblp.org/pid/236/4348.html">DBLP</a> |
   <a href="/assets/audio/pronunciation.mp3" target="_blank">Pronunciation 👀</a>

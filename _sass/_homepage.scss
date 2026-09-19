@@ -1,0 +1,47 @@
+.contact-email {
+  appearance: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: var(--global-theme-color);
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+  &:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+}
+.contact-email-wrap {
+  position: relative;
+}
+.contact-email-popover {
+  position: absolute;
+  top: 1.8em;
+  left: 0;
+  z-index: 1000;
+  white-space: nowrap;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 0.25rem;
+  background: var(--global-bg-color);
+  color: var(--global-text-color);
+  font-size: 0.875rem;
+}
+.profile {
+  width: 150px;
+}
+@media (min-width: 576px) {
+  .profile {
+    width: 150px;
+  }
+}
+.publications {
+  margin-top: 0;
+}
+.publications .honors {
+  color: var(--global-highlight-color);
+  font-weight: 500;
+}
